@@ -366,15 +366,15 @@ if(WIN32)
         message(STATUS "**mal checking the APP_ICON_WIN_FOLDER before set is ${APP_ICON_WIN_FOLDER}") #maladded
         message(STATUS "**malexpected the APP_ICON_WIN_FOLDER before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
 
-        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially
+        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially #mal uncommented back out for linux 20220408 1500
         
-        set(APP_ICON_WIN_FOLDER "C:/Nextcloud/client-building/desktop/theme/colored/icons")
+        #set(APP_ICON_WIN_FOLDER "C:/Nextcloud/client-building/desktop/theme/colored/icons") #mal commented out for linux 20220408 1500
 
         message(STATUS "**mal checking the APP_ICON_WIN_FOLDER after set is ${APP_ICON_WIN_FOLDER}") #maladded
         message(STATUS "**malexpected the APP_ICON_WIN_FOLDER after set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
 
         #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "Nextcloud-icon-win-folder.svg" )
-        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "Xiddigspace-icon-win-folder.svg" )
+        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "Xiddigspace-icon-win-folder.svg" ) #mal commented out for linux 20220408 1500
 
         message(STATUS "**") #maladded
         message(STATUS "**mal PASSED ecm_add_app_icon(APP_ICON..") #maladded
@@ -419,12 +419,13 @@ message(STATUS "**mal checking the APP_ICON before set is ${APP_ICON}") #maladde
 message(STATUS "**malexpected the APP_ICON before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
 message(STATUS "**") #maladded
 
-set(APP_ICON "C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladded
+#set(APP_ICON "C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladded #malcommented out for linux 20220408 1456
 #set(OWNCLOUD_ICONS "Nextcloud-icon-win-folder.svg") #maladded #can change APP NAME
-set(OWNCLOUD_ICONS "Xiddigspace-icon-win-folder.svg") #maladded #can change APP NAME
+#set(OWNCLOUD_ICONS "Xiddigspace-icon-win-folder.svg") #maladded #can change APP NAME #malcommented out for linux 20220408 1456
 
-#ecm_add_app_icon(APP_ICON RC_DEPENDENCIES ${RC_DEPENDENCIES} ICONS "${OWNCLOUD_ICONS}" SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APPLICATION_ICON_NAME}" ICON_INDEX 1) #initially
-ecm_add_app_icon(APP_ICON ICONS "${OWNCLOUD_ICONS}") #siredited
+ecm_add_app_icon(APP_ICON RC_DEPENDENCIES ${RC_DEPENDENCIES} ICONS "${OWNCLOUD_ICONS}" SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APPLICATION_ICON_NAME}" ICON_INDEX 1) #initially
+#mal uncommented out above to revert back to original code for linux 20220408 1456
+#ecm_add_app_icon(APP_ICON ICONS "${OWNCLOUD_ICONS}") #siredited  #malcommented out for linux 20220408 1456
 
 
 # --------------------------------------
@@ -514,8 +515,8 @@ message(STATUS "**") #maladded
         message(STATUS "**mal RUN get_filename_component(RC_IN_FOLDER...") #maladded
         message(STATUS "**") #maladded
 
-        # get_filename_component(RC_IN_FOLDER ${APP_ICON}} DIRECTORY) #initially
-        get_filename_component(RC_IN_FOLDER ${APP_ICON} DIRECTORY) #maledited
+        get_filename_component(RC_IN_FOLDER ${APP_ICON}} DIRECTORY) #initially #mal uncommented out for linux 20220408 1500
+        #get_filename_component(RC_IN_FOLDER ${APP_ICON} DIRECTORY) #maledited #mal commented out for linux 20220408 1500
 
         message(STATUS "**mal checking the RC_IN_FOLDER is ${RC_IN_FOLDER}") #maladded
         message(STATUS "**malexpected the RC_IN_FOLDER is: C:/Nextcloud/client-building/desktop/src/gui") #maladdedexpected
