@@ -52,8 +52,8 @@ void LegalNotice::changeEvent(QEvent *e)
 
 void LegalNotice::customizeStyle()
 {
-    QString notice = tr("<p>Copyright 2017-2021 Nextcloud GmbH<br />"
-                        "Copyright 2012-2021 ownCloud GmbH</p>");
+    QString notice = tr("<p> <br />"
+                        "Copyright 2021-2022 Xiddig Technology Sdn Bhd</p>"); //maledited
 
     notice += tr("<p>Licensed under the GNU General Public License (GPL) Version 2.0 or any later version.</p>");
 
