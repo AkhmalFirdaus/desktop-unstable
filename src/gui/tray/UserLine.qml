@@ -48,7 +48,7 @@ MenuItem {
                 Rectangle {
                     anchors.fill: parent
                     anchors.margins: 1
-                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.lightHover : Style.backgroundColor
+                    color: parent.parent.hovered || parent.parent.visualFocus ? Style.lightHover : "transparent"
                 }
             }
 
@@ -61,7 +61,7 @@ MenuItem {
                     Layout.leftMargin: 7
                     verticalAlignment: Qt.AlignCenter
                     cache: false
-                    source: model.avatar != "" ? model.avatar : Theme.darkMode ? "image://avatars/fallbackWhite" : "image://avatars/fallbackBlack"
+                    source: model.avatar != "" ? model.avatar : "image://avatars/fallbackBlack"
                     Layout.preferredHeight: Style.accountAvatarSize
                     Layout.preferredWidth: Style.accountAvatarSize
                     Rectangle {
@@ -100,7 +100,7 @@ MenuItem {
                         id: accountUser
                         text: name
                         elide: Text.ElideRight
-                        color: Style.ncTextColor
+                        color: "black"
                         font.pixelSize: Style.topLinePixelSize
                         font.bold: true
                         width: parent.width
@@ -121,7 +121,7 @@ MenuItem {
                             visible: model.statusMessage !== ""
                             text: statusMessage
                             elide: Text.ElideRight
-                            color: Style.ncTextColor
+                            color: "black"
                             font.pixelSize: Style.subLinePixelSize
                             leftPadding: Style.accountLabelsSpacing
                         }
@@ -132,7 +132,7 @@ MenuItem {
                         height: Style.topLinePixelSize
                         text: server
                         elide: Text.ElideRight
-                        color: Style.ncTextColor
+                        color: "black"
                         font.pixelSize: Style.subLinePixelSize
                     }
                 }
@@ -146,7 +146,7 @@ MenuItem {
             flat: true
 
             icon.source: "qrc:///client/theme/more.svg"
-            icon.color: Style.ncTextColor
+            icon.color: "transparent"
 
             Accessible.role: Accessible.ButtonMenu
             Accessible.name: qsTr("Account actions")
@@ -173,7 +173,6 @@ MenuItem {
 
                 background: Rectangle {
                     border.color: Style.menuBorder
-                    color: Style.backgroundColor
                     radius: 2
                 }
 
@@ -182,7 +181,6 @@ MenuItem {
                     height: visible ? implicitHeight : 0
                     text: qsTr("Set status")
                     font.pixelSize: Style.topLinePixelSize
-                    palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
                         showUserStatusSelectorDialog(index)
@@ -203,7 +201,6 @@ MenuItem {
                 MenuItem {
                     text: model.isConnected ? qsTr("Log out") : qsTr("Log in")
                     font.pixelSize: Style.topLinePixelSize
-                    palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
                         model.isConnected ? UserModel.logout(index) : UserModel.login(index)
@@ -237,7 +234,6 @@ MenuItem {
                     id: removeAccountButton
                     text: qsTr("Remove account")
                     font.pixelSize: Style.topLinePixelSize
-                    palette.windowText: Style.ncTextColor
                     hoverEnabled: true
                     onClicked: {
                         UserModel.removeAccount(index)

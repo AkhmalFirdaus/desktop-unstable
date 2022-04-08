@@ -40,37 +40,28 @@ class ActivityListModel : public QAbstractListModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(quint32 maxActionButtons READ maxActionButtons CONSTANT)
-
     Q_PROPERTY(AccountState *accountState READ accountState CONSTANT)
 public:
     enum DataRole {
-        DarkIconRole = Qt::UserRole + 1,
-        LightIconRole,
+        ActionIconRole = Qt::UserRole + 1,
+        UserIconRole,
         AccountRole,
         ObjectTypeRole,
-        ObjectIdRole,
-        ObjectNameRole,
         ActionsLinksRole,
-        ActionsLinksContextMenuRole,
-        ActionsLinksForActionButtonsRole,
         ActionTextRole,
         ActionTextColorRole,
         ActionRole,
         MessageRole,
         DisplayPathRole,
         PathRole,
+        AbsolutePathRole,
         DisplayLocationRole, // Provides the display path to a file's parent folder, relative to Nextcloud root
         LinkRole,
         PointInTimeRole,
         AccountConnectedRole,
+        SyncFileStatusRole,
         DisplayActions,
         ShareableRole,
-        IsCurrentUserFileActivityRole,
-        ThumbnailRole,
-        TalkNotificationConversationTokenRole,
-        TalkNotificationMessageIdRole,
-        TalkNotificationMessageSentRole,
     };
     Q_ENUM(DataRole)
 
@@ -95,35 +86,24 @@ public:
     void removeActivityFromActivityList(int row);
     void removeActivityFromActivityList(Activity activity);
 
+    Q_INVOKABLE void triggerDefaultAction(int activityIndex);
+    Q_INVOKABLE void triggerAction(int activityIndex, int actionIndex);
+
     AccountState *accountState() const;
-    void setAccountState(AccountState *state);
-
-    static constexpr quint32 maxActionButtons()
-    {
-        return MaxActionButtons;
-    }
-
-    void setCurrentItem(const int currentItem);
-
-    void setReplyMessageSent(const int activityIndex, const QString &message);
-    QString replyMessageSent(const Activity &activity) const;
 
 public slots:
     void slotRefreshActivity();
     void slotRemoveAccount();
-    void slotTriggerDefaultAction(const int activityIndex);
-    void slotTriggerAction(const int activityIndex, const int actionIndex);
-    void slotTriggerDismiss(const int activityIndex);
 
 signals:
     void activityJobStatusCode(int statusCode);
     void sendNotificationRequest(const QString &accountName, const QString &link, const QByteArray &verb, int row);
 
 protected:
-    void setup();
     void activitiesReceived(const QJsonDocument &json, int statusCode);
     QHash<int, QByteArray> roleNames() const override;
 
+    void setAccountState(AccountState *state);
     void setCurrentlyFetching(bool value);
     bool currentlyFetching() const;
     void setDoneFetching(bool value);
@@ -132,20 +112,9 @@ protected:
 
     virtual void startFetchJob();
 
-    // added these for unit tests
-    void setFinalList(const ActivityList &finalList);
-    const ActivityList &finalList() const;
-    int currentItem() const;
-    //
-
 private:
-    static QVariantList convertLinksToMenuEntries(const Activity &activity);
-    static QVariantList convertLinksToActionButtons(const Activity &activity);
-    static QVariant convertLinkToActionButton(const ActivityLink &activityLink);
     void combineActivityLists();
     bool canFetchActivities() const;
-
-    void ingestActivities(const QJsonArray &activities);
 
     ActivityList _activityLists;
     ActivityList _syncFileItemLists;
@@ -170,8 +139,6 @@ private:
     bool _currentlyFetching = false;
     bool _doneFetching = false;
     bool _hideOldActivities = true;
-
-    static constexpr quint32 MaxActionButtons = 3;
 };
 }
 
