@@ -343,9 +343,6 @@ QString Theme::hidpiFileName(const QString &iconName, const QColor &backgroundCo
 Theme::Theme()
     : QObject(nullptr)
 {
-#if defined(Q_OS_WIN)
-    reserveDarkPalette = QPalette(QColor(49,49,49,255), QColor(35,35,35,255)); // Windows 11 button and window dark colours
-#endif
 }
 
 // If this option returns true, the client only supports one folder to sync.
@@ -370,7 +367,8 @@ QString Theme::helpUrl() const
 #ifdef APPLICATION_HELP_URL
     return QString::fromLatin1(APPLICATION_HELP_URL);
 #else
-    return QString::fromLatin1("https://docs.nextcloud.com/desktop/%1.%2/").arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR);
+    return QString::fromLatin1("https://xiddigspace.com");//.arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR); //maledited //in future if help url exist, change here
+    // return QString::fromLatin1("https://docs.nextcloud.com/desktop/%1.%2/").arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR);
 #endif
 }
 
@@ -414,15 +412,6 @@ bool Theme::enableStaplingOCSP() const
 bool Theme::forbidBadSSL() const
 {
 #ifdef APPLICATION_FORBID_BAD_SSL
-    return true;
-#else
-    return false;
-#endif
-}
-
-bool Theme::doNotUseProxy() const
-{
-#ifdef DO_NOT_USE_PROXY
     return true;
 #else
     return false;
@@ -494,13 +483,17 @@ QString Theme::gitSHA1() const
     QString devString;
 #ifdef GIT_SHA1
     const QString githubPrefix(QLatin1String(
-        "https://github.com/nextcloud/desktop/commit/"));
+        "https://xiddigspace.com")); //maledited to xiddigspace.com
+        // "https://github.com/nextcloud/desktop/commit/"));
     const QString gitSha1(QLatin1String(GIT_SHA1));
     devString = QCoreApplication::translate("nextcloudTheme::about()",
-        "<p><small>Built from Git revision <a href=\"%1\">%2</a>"
-        " on %3, %4 using Qt %5, %6</small></p>")
-                    .arg(githubPrefix + gitSha1)
-                    .arg(gitSha1.left(6))
+        // malcommented out
+        //"<p><small>Built from Git revision <a href=\"%1\">%2</a>"
+        // " on %3, %4 using Qt %5, %6</small></p>")
+        "<p><small>Built from Git revision f21d06 <a></a>"
+        " on %1, %2 using Qt %3, %4</small></p>")
+                    //.arg(githubPrefix + gitSha1)
+                    //.arg(gitSha1.left(6))
                     .arg(__DATE__)
                     .arg(__TIME__)
                     .arg(qVersion())
@@ -522,7 +515,7 @@ QString Theme::about() const
 
     devString += tr("<p>Version %1. For more information please click <a href='%2'>here</a>.</p>")
               .arg(QString::fromLatin1(MIRALL_STRINGIFY(MIRALL_VERSION)) + QString(" (%1)").arg(osName))
-              .arg(helpUrl());
+              .arg(helpUrl()); //malsaid this need to be changed to xiddigspace.com
 
     devString += tr("<p><small>Using virtual files plugin: %1</small></p>")
                      .arg(Vfs::modeToString(bestAvailableVfsMode()));
@@ -779,16 +772,11 @@ QString Theme::versionSwitchOutput() const
     return helpText;
 }
 
-double Theme::getColorDarkness(const QColor &color)
-{
-    // account for different sensitivity of the human eye to certain colors
-    const double threshold = 1.0 - (0.299 * color.red() + 0.587 * color.green() + 0.114 * color.blue()) / 255.0;
-    return threshold;
-}
-
 bool Theme::isDarkColor(const QColor &color)
 {
-    return getColorDarkness(color) > 0.5;
+    // account for different sensitivity of the human eye to certain colors
+    double treshold = 1.0 - (0.299 * color.red() + 0.587 * color.green() + 0.114 * color.blue()) / 255.0;
+    return treshold > 0.5;
 }
 
 QColor Theme::getBackgroundAwareLinkColor(const QColor &backgroundColor)
@@ -882,11 +870,6 @@ bool Theme::enforceVirtualFilesSyncFolder() const
     return ENFORCE_VIRTUAL_FILES_SYNC_FOLDER && vfsMode != OCC::Vfs::Off;
 }
 
-QColor Theme::defaultColor()
-{
-    return QColor{NEXTCLOUD_BACKGROUND_COLOR};
-}
-
 QColor Theme::errorBoxTextColor() const
 {
     return QColor{"white"};
@@ -900,45 +883,6 @@ QColor Theme::errorBoxBackgroundColor() const
 QColor Theme::errorBoxBorderColor() const
 { 
     return QColor{"black"};
-}
-
-void Theme::connectToPaletteSignal()
-{
-    if (!_paletteSignalsConnected) {
-        if (const auto ptr = qobject_cast<QGuiApplication *>(QGuiApplication::instance())) {
-            connect(ptr, &QGuiApplication::paletteChanged, this, &Theme::systemPaletteChanged);
-            connect(ptr, &QGuiApplication::paletteChanged, this, &Theme::darkModeChanged);
-            _paletteSignalsConnected = true;
-        }
-    }
-}
-
-QPalette Theme::systemPalette()
-{
-    connectToPaletteSignal();
-#if defined(Q_OS_WIN)
-    if(darkMode()) {
-        return reserveDarkPalette;
-    }
-#endif
-    return QGuiApplication::palette();
-}
-
-bool Theme::darkMode()
-{
-    connectToPaletteSignal();
-// Windows: Check registry for dark mode
-#if defined(Q_OS_WIN)
-    const auto darkModeSubkey = QStringLiteral("Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize");
-    if (Utility::registryKeyExists(HKEY_CURRENT_USER, darkModeSubkey) &&
-        !Utility::registryGetKeyValue(HKEY_CURRENT_USER, darkModeSubkey, QStringLiteral("AppsUseLightTheme")).toBool()) {
-        return true;
-    }
-
-    return false;
-#else
-    return Theme::isDarkColor(QGuiApplication::palette().window().color());
-#endif
 }
 
 } // end namespace client
