@@ -27,7 +27,6 @@ set(theme_dir ${CMAKE_SOURCE_DIR}/theme)
 set(client_UI_SRCS
     accountsettings.ui
     conflictdialog.ui
-    internallinkwidget.ui
     invalidfilenamedialog.ui
     foldercreationdialog.ui
     folderwizardsourcepage.ui
@@ -64,207 +63,109 @@ else()
 endif()
 
 set(client_SRCS
-    accountmanager.h
     accountmanager.cpp
-    accountsettings.h
     accountsettings.cpp
-    application.h
     application.cpp
-    invalidfilenamedialog.h
     invalidfilenamedialog.cpp
-    conflictdialog.h
     conflictdialog.cpp
-    conflictsolver.h
     conflictsolver.cpp
-    connectionvalidator.h
     connectionvalidator.cpp
-    folder.h
     folder.cpp
-    foldercreationdialog.h
     foldercreationdialog.cpp
-    folderman.h
     folderman.cpp
-    folderstatusmodel.h
     folderstatusmodel.cpp
-    folderstatusdelegate.h
     folderstatusdelegate.cpp
-    folderstatusview.h
     folderstatusview.cpp
-    folderwatcher.h
     folderwatcher.cpp
-    folderwizard.h
     folderwizard.cpp
-    generalsettings.h
     generalsettings.cpp
-    legalnotice.h
     legalnotice.cpp
-    internallinkwidget.h
-    internallinkwidget.cpp
-    ignorelisteditor.h
     ignorelisteditor.cpp
-    ignorelisttablewidget.h
     ignorelisttablewidget.cpp
-    lockwatcher.h
     lockwatcher.cpp
-    logbrowser.h
     logbrowser.cpp
-    navigationpanehelper.h
     navigationpanehelper.cpp
-    networksettings.h
     networksettings.cpp
-    ocsnavigationappsjob.h
     ocsnavigationappsjob.cpp
-    ocsjob.h
     ocsjob.cpp
-    ocssharejob.h
     ocssharejob.cpp
-    ocsshareejob.h
     ocsshareejob.cpp
-    openfilemanager.h
     openfilemanager.cpp
-    owncloudgui.h
     owncloudgui.cpp
-    owncloudsetupwizard.h
     owncloudsetupwizard.cpp
-    passwordinputdialog.h
     passwordinputdialog.cpp
-    selectivesyncdialog.h
     selectivesyncdialog.cpp
-    settingsdialog.h
     settingsdialog.cpp
-    sharedialog.h
     sharedialog.cpp
-    sharelinkwidget.h
     sharelinkwidget.cpp
-    sharemanager.h
     sharemanager.cpp
-    shareusergroupwidget.h
     shareusergroupwidget.cpp
-    profilepagewidget.h
     profilepagewidget.cpp
-    sharee.h
     sharee.cpp
-    sslbutton.h
     sslbutton.cpp
-    sslerrordialog.h
     sslerrordialog.cpp
-    syncrunfilelog.h
     syncrunfilelog.cpp
-    systray.h
     systray.cpp
-    thumbnailjob.h
     thumbnailjob.cpp
-    userinfo.h
     userinfo.cpp
-    accountstate.h
     accountstate.cpp
-    addcertificatedialog.h
     addcertificatedialog.cpp
-    authenticationdialog.h
     authenticationdialog.cpp
-    proxyauthhandler.h
     proxyauthhandler.cpp
-    proxyauthdialog.h
     proxyauthdialog.cpp
-    tooltipupdater.h
     tooltipupdater.cpp
-    notificationconfirmjob.h
     notificationconfirmjob.cpp
-    guiutility.h
     guiutility.cpp
-    elidedlabel.h
     elidedlabel.cpp
-    headerbanner.h
     headerbanner.cpp
-    iconutils.h
     iconutils.cpp
-    remotewipe.h
     remotewipe.cpp
-    userstatusselectormodel.h
     userstatusselectormodel.cpp
-    emojimodel.h
     emojimodel.cpp
-    fileactivitylistmodel.h
     fileactivitylistmodel.cpp
-    tray/svgimageprovider.h
     tray/svgimageprovider.cpp
-    tray/syncstatussummary.h
     tray/syncstatussummary.cpp
-    tray/activitydata.h
     tray/activitydata.cpp
-    tray/activitylistmodel.h
     tray/activitylistmodel.cpp
-    tray/unifiedsearchresult.h
-    tray/asyncimageresponse.cpp
     tray/unifiedsearchresult.cpp
-    tray/unifiedsearchresultslistmodel.h
-    tray/trayimageprovider.cpp
+    tray/unifiedsearchresultimageprovider.cpp
     tray/unifiedsearchresultslistmodel.cpp
-    tray/usermodel.h
     tray/usermodel.cpp
-    tray/notificationhandler.h
     tray/notificationhandler.cpp
-    tray/notificationcache.h
     tray/notificationcache.cpp
-    creds/credentialsfactory.h
-    tray/talkreply.cpp
     creds/credentialsfactory.cpp
-    creds/httpcredentialsgui.h
     creds/httpcredentialsgui.cpp
-    creds/oauth.h
     creds/oauth.cpp
-    creds/flow2auth.h
     creds/flow2auth.cpp
-    creds/webflowcredentials.h
     creds/webflowcredentials.cpp
-    creds/webflowcredentialsdialog.h
     creds/webflowcredentialsdialog.cpp
-    wizard/postfixlineedit.h
     wizard/postfixlineedit.cpp
-    wizard/abstractcredswizardpage.h
     wizard/abstractcredswizardpage.cpp
-    wizard/owncloudadvancedsetuppage.h
     wizard/owncloudadvancedsetuppage.cpp
-    wizard/owncloudconnectionmethoddialog.h
     wizard/owncloudconnectionmethoddialog.cpp
-    wizard/owncloudhttpcredspage.h
     wizard/owncloudhttpcredspage.cpp
-    wizard/owncloudoauthcredspage.h
     wizard/owncloudoauthcredspage.cpp
-    wizard/flow2authcredspage.h
     wizard/flow2authcredspage.cpp
-    wizard/flow2authwidget.h
     wizard/flow2authwidget.cpp
-    wizard/owncloudsetuppage.h
     wizard/owncloudsetuppage.cpp
-    wizard/owncloudwizardcommon.h
     wizard/owncloudwizardcommon.cpp
-    wizard/owncloudwizard.h
     wizard/owncloudwizard.cpp
-    wizard/slideshow.h
     wizard/slideshow.cpp
-    wizard/welcomepage.h
     wizard/welcomepage.cpp
-    wizard/linklabel.h
     wizard/linklabel.cpp
     )
 
 if (Qt5WebEngine_FOUND AND Qt5WebEngineWidgets_FOUND)
   list(APPEND client_SRCS
-    wizard/webviewpage.h
     wizard/webviewpage.cpp
-    wizard/webview.h
     wizard/webview.cpp
   )
 endif()
 
 IF(BUILD_UPDATER)
     set(updater_SRCS
-        updater/ocupdater.h
         updater/ocupdater.cpp
-        updater/updateinfo.h
         updater/updateinfo.cpp
-        updater/updater.h
         updater/updater.cpp
     )
 endif()
@@ -298,19 +199,12 @@ list(APPEND client_SRCS folderwatcher_mac.cpp)
 ENDIF()
 
 set(3rdparty_SRC
-    ../3rdparty/QProgressIndicator/QProgressIndicator.h
     ../3rdparty/QProgressIndicator/QProgressIndicator.cpp
-    ../3rdparty/qtlockedfile/qtlockedfile.h
     ../3rdparty/qtlockedfile/qtlockedfile.cpp
-    ../3rdparty/qtsingleapplication/qtlocalpeer.h
     ../3rdparty/qtsingleapplication/qtlocalpeer.cpp
-    ../3rdparty/qtsingleapplication/qtsingleapplication.h
     ../3rdparty/qtsingleapplication/qtsingleapplication.cpp
-    ../3rdparty/qtsingleapplication/qtsinglecoreapplication.h
     ../3rdparty/qtsingleapplication/qtsinglecoreapplication.cpp
-    ../3rdparty/kmessagewidget/kmessagewidget.h
     ../3rdparty/kmessagewidget/kmessagewidget.cpp
-    ../3rdparty/kirigami/wheelhandler.h
     ../3rdparty/kirigami/wheelhandler.cpp
    )
 
@@ -370,7 +264,8 @@ endif()
 find_program(SVG_CONVERTER
   NAMES inkscape inkscape.exe rsvg-convert
   REQUIRED
-  HINTS "C:\\Program Files\\Inkscape\\bin" "/usr/bin" ENV SVG_CONVERTER_DIR)
+  # HINTS "C:\\Program Files\\Inkscape\\bin" "/usr/bin" ENV SVG_CONVERTER_DIR)
+  HINTS "C:\\Program Files\\Inkscape" "/usr/bin" ENV SVG_CONVERTER_DIR)
 # REQUIRED keyword is only supported on CMake 3.18 and above
 if (NOT SVG_CONVERTER)
   message(FATAL_ERROR "Could not find a suitable svg converter. Set SVG_CONVERTER_DIR to the path of either the inkscape or rsvg-convert executable.")
@@ -393,6 +288,7 @@ function(generate_sized_png_from_svg icon_path size)
   if (ARG_OUTPUT_ICON_PATH)
     set(icon_name_dir ${ARG_OUTPUT_ICON_PATH})
   endif ()
+  
 
   if (EXISTS "${icon_name_dir}/${size}-${icon_name_wle}.png")
     return()
@@ -462,7 +358,31 @@ if(WIN32)
         file(GLOB_RECURSE OWNCLOUD_ICONS_WIN_FOLDER "${APP_SECONDARY_ICONS}/*-${APPLICATION_ICON_NAME}-icon*")
         set(APP_ICON_WIN_FOLDER_ICO_NAME "${APPLICATION_ICON_NAME}-win-folder")
         set(RC_DEPENDENCIES "${RC_DEPENDENCIES} ${APP_ICON_WIN_FOLDER_ICO_NAME}.ico")
-        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "${OWNCLOUD_ICONS_WIN_FOLDER}" SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal PASSED set(RC_DEPENDENCIES..") #maladded
+
+        message(STATUS "**mal RUN ecm_add_app_icon(APP_ICON..") #maladded
+        message(STATUS "**mal checking the APP_ICON_WIN_FOLDER before set is ${APP_ICON_WIN_FOLDER}") #maladded
+        message(STATUS "**malexpected the APP_ICON_WIN_FOLDER before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
+
+        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially
+        
+        set(APP_ICON_WIN_FOLDER "C:/Nextcloud/client-building/desktop/theme/colored/icons")
+
+        message(STATUS "**mal checking the APP_ICON_WIN_FOLDER after set is ${APP_ICON_WIN_FOLDER}") #maladded
+        message(STATUS "**malexpected the APP_ICON_WIN_FOLDER after set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
+
+        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "Nextcloud-icon-win-folder.svg" )
+        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS "Xiddigspace-icon-win-folder.svg" )
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal PASSED ecm_add_app_icon(APP_ICON..") #maladded
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal EXITING if (EXISTS APP_ICON_WIN_FOLDER_SVG)") #maladded
+        message(STATUS "**") #maladded
+
     endif()
 endif()
 # --------------------------------------
@@ -489,48 +409,321 @@ if(APPLE)
     MESSAGE(STATUS "OWNCLOUD_SIDEBAR_ICONS: ${APPLICATION_ICON_NAME}: ${OWNCLOUD_SIDEBAR_ICONS}")
 endif()
 
-ecm_add_app_icon(APP_ICON RC_DEPENDENCIES ${RC_DEPENDENCIES} ICONS "${OWNCLOUD_ICONS}" SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APPLICATION_ICON_NAME}" ICON_INDEX 1)
+message(STATUS "**mal PASSED if(APPLE)") #maladded
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN ecm_add_app_icon(APP_ICON RC_DEP..") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal checking the APP_ICON before set is ${APP_ICON}") #maladded
+message(STATUS "**malexpected the APP_ICON before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
+message(STATUS "**") #maladded
+
+set(APP_ICON "C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladded
+#set(OWNCLOUD_ICONS "Nextcloud-icon-win-folder.svg") #maladded #can change APP NAME
+set(OWNCLOUD_ICONS "Xiddigspace-icon-win-folder.svg") #maladded #can change APP NAME
+
+#ecm_add_app_icon(APP_ICON RC_DEPENDENCIES ${RC_DEPENDENCIES} ICONS "${OWNCLOUD_ICONS}" SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APPLICATION_ICON_NAME}" ICON_INDEX 1) #initially
+ecm_add_app_icon(APP_ICON ICONS "${OWNCLOUD_ICONS}") #siredited
+
+
 # --------------------------------------
 
+message(STATUS "**") #maladded
+message(STATUS "**mal checking the APP_ICON is ${APP_ICON}") #maladded
+message(STATUS "**malexpected the APP_ICON is: App Icon Path") #maladdedexpected
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal checking the RC_DEPENDENCIES is ${RC_DEPENDENCIES}") #maladded
+message(STATUS "**malexpected the RC_DEPENDENCIES is: RC Samting") #maladdedexpected
+message(STATUS "**") #maladded
+
+message(STATUS "**mal checking the ICONS is ${ICONS}") #maladded
+message(STATUS "**malexpected the ICONS is: Icon Samting Samting Asyik Error Sini") #maladdedexpected
+message(STATUS "**") #maladded
+
+message(STATUS "**mal checking the SIDEBAR_ICONS is ${SIDEBAR_ICONS}") #maladded
+message(STATUS "**malexpected the SIDEBAR_ICONS is: C:/Nextcloud/client-building/desktop/theme/colored/Nextcloud-sidebar.svg") #maladdedexpected
+message(STATUS "**") #maladded
+
+message(STATUS "**mal checking the OUTFILE_BASENAME is ${OUTFILE_BASENAME}") #maladded
+message(STATUS "**malexpected the OUTFILE_BASENAME is: Nextcloud") #maladdedexpected
+message(STATUS "**") #maladded
+
+message(STATUS "**mal PASSED funtion call ecm_add_app_icon(APP_ICON RC_DEP..") #maladded
+message(STATUS "**") #maladded
+
 if(WIN32)
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN if(WIN32)") #maladded
+message(STATUS "**") #maladded
 # merge *.rc.in files for Windows (multiple ICON resources must be placed in a single file, otherwise, this won't work de to a bug in Windows compiler https://developercommunity.visualstudio.com/t/visual-studio-2017-prof-1557-cvt1100-duplicate-res/363156)
     function(merge_files IN_FILE OUT_FILE)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN function(merge_files") #maladded
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN file(READ..") #maladded
+        message(STATUS "**") #maladded
+
         file(READ ${IN_FILE} CONTENTS)
         message("Merging ${IN_FILE} into ${OUT_FILE}")
+
+        message(STATUS "**mal checking the IN_FILE is ${IN_FILE}") #maladded
+        message(STATUS "**malexpected the IN_FILE is: IN_FILE content") #maladdedexpected
+        message(STATUS "**mal checking the OUT_FILE is ${OUT_FILE}") #maladded
+        message(STATUS "**malexpected the OUT_FILE is: OUT_FILE content") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED file(READ..") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN file(APPEND ${OUT_FILE...") #maladded
+        message(STATUS "**") #maladded
+
         file(APPEND ${OUT_FILE} "${CONTENTS}")
+        message(STATUS "**mal PASSED file(APPEND ${OUT_FILE...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal PASSED function(merge_files...") #maladded
+        message(STATUS "**") #maladded
+
     endfunction()
+
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal COMPLETED function(merge_files...") #maladded
+    message(STATUS "**") #maladded
+    message(STATUS "**mal RUN message APP_ICON is..") #maladded
+    message(STATUS "**") #maladded
+
     message("APP_ICON is: ${APP_ICON}")
+
+    message(STATUS "**mal checking the APP_ICON is ${APP_ICON}") #maladded
+    message(STATUS "**malexpected the APP_ICON is: Nextcloud..svg..or png") #maladdedexpected
+    message(STATUS "**") #maladded
+
+    message(STATUS "**mal PASSED message APP_ICON is..") #maladded
+    message(STATUS "**") #maladded
+
+
     if(APP_ICON)
-        get_filename_component(RC_IN_FOLDER ${APP_ICON}} DIRECTORY)
+        message(STATUS "**mal RUN if(APP_ICON)") #maladded
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal RUN get_filename_component(RC_IN_FOLDER...") #maladded
+        message(STATUS "**") #maladded
+
+        # get_filename_component(RC_IN_FOLDER ${APP_ICON}} DIRECTORY) #initially
+        get_filename_component(RC_IN_FOLDER ${APP_ICON} DIRECTORY) #maledited
+
+        message(STATUS "**mal checking the RC_IN_FOLDER is ${RC_IN_FOLDER}") #maladded
+        message(STATUS "**malexpected the RC_IN_FOLDER is: C:/Nextcloud/client-building/desktop/src/gui") #maladdedexpected
+        message(STATUS "**mal checking the APP_ICON is ${APP_ICON}") #maladded
+        message(STATUS "**malexpected the APP_ICON is: Samting") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED get_filename_component(RC_IN_FOLDER...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN file(GLOB_RECURSE...") #maladded
+        message(STATUS "**") #maladded
 
         file(GLOB_RECURSE RC_IN_FILES "${RC_IN_FOLDER}/*rc.in")
 
+        message(STATUS "**mal checking the RC_IN_FILES is ${RC_IN_FILES}") #maladded
+        message(STATUS "**malexpected the RC_IN_FILES is: C:/Nextcloud/client-building/desktop/src/gui/version.rc.in") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED file(GLOB_RECURSE...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**") #maladded
+
+
         foreach(rc_in_file IN ITEMS ${RC_IN_FILES})
+          message(STATUS "**mal RUN file(GLOB_RECURSE...") #maladded
+          message(STATUS "**") #maladded
+
+          message(STATUS "**mal checking the RC_IN_FILES is ${RC_IN_FILES}") #maladded
+          message(STATUS "**malexpected the RC_IN_FILES is: C:/Nextcloud/client-building/desktop/src/gui/version.rc.in") #maladdedexpected
+          message(STATUS "**") #maladded
+
+          message(STATUS "**") #maladded
+          message(STATUS "**mal RUN get_filename_component(rc_in_file_name..") #maladded
+          message(STATUS "**") #maladded
+
           get_filename_component(rc_in_file_name ${rc_in_file} NAME)
+          message(STATUS "**mal checking the rc_in_file_name is ${rc_in_file_name}") #maladded
+          message(STATUS "**malexpected the rc_in_file_name is: Samting") #maladdedexpected
+          message(STATUS "**") #maladded
+          message(STATUS "**mal PASSED get_filename_component(rc_in_file_name..") #maladded
+          message(STATUS "**") #maladded
+          message(STATUS "**") #maladded
+
+
+          message(STATUS "**mal RUN get_filename_component(app_icon_name..") #maladded
+          message(STATUS "**") #maladded
+
           get_filename_component(app_icon_name "${APP_ICON}.in" NAME)
+          message(STATUS "**mal checking the app_icon_name is ${app_icon_name}") #maladded
+          message(STATUS "**malexpected the app_icon_name is: Nextcloud.in or owncloud.xml.in..mana satu") #maladdedexpected
+          message(STATUS "**") #maladded
+          message(STATUS "**mal PASSED get_filename_component(app_icon_name..") #maladded
+          message(STATUS "**") #maladded
+
+
           if(NOT "${rc_in_file_name}" STREQUAL "${app_icon_name}")
+              message(STATUS "**") #maladded
+              message(STATUS "**mal RUN if(NOT rc_in_file_name STREQUAL...") #maladded
+              message(STATUS "**") #maladded
+
+              message(STATUS "**") #maladded
+              message(STATUS "**mal RUN merge_files(${rc_in_file...") #maladded
+              message(STATUS "**") #maladded
+
               merge_files(${rc_in_file} "${APP_ICON}.in")
+
+              message(STATUS "**mal checking the rc_in_file is ${rc_in_file}") #maladded
+              message(STATUS "**malexpected the rc_in_file is: C:/Nextcloud/client-building/desktop/src/gui/version.rc.in..samting") #maladdedexpected
+              message(STATUS "**") #maladded
+
+              message(STATUS "**") #maladded
+              message(STATUS "**mal PASSED merge_files(${rc_in_file...") #maladded
+              message(STATUS "**") #maladded
+
+
               if (DEFINED APPLICATION_FOLDER_ICON_INDEX)
+                  message(STATUS "**mal RUN if (DEFINED APPLICATION_FOLDER_ICON_INDEX") #maladded
+                  message(STATUS "**") #maladded
+
                   MATH(EXPR APPLICATION_FOLDER_ICON_INDEX "${APPLICATION_FOLDER_ICON_INDEX}+1")
                   message("APPLICATION_FOLDER_ICON_INDEX is now set to: ${APPLICATION_FOLDER_ICON_INDEX}")
+
               endif()
+
+              message(STATUS "**mal PASSED if (DEFINED APPLICATION_FOLDER_ICON_INDEX") #maladded
+              message(STATUS "**") #maladded
           endif()
+          message(STATUS "**mal PASSED if(NOT rc_in_file_name STREQUAL...") #maladded
+          message(STATUS "**") #maladded
+
+          message(STATUS "**mal EXITING file(GLOB_RECURSE...") #maladded
+          message(STATUS "**") #maladded
         endforeach()
+        message(STATUS "**mal PASSED file(GLOB_RECURSE...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal EXITING if(APP_ICON)") #maladded
+        message(STATUS "**") #maladded
     endif()
+    message(STATUS "**mal PASSED if(APP_ICON)") #maladded
+    message(STATUS "**") #maladded
+    message(STATUS "**mal EXITING if(WIN32)") #maladded
+    message(STATUS "**") #maladded
 endif()
+
+message(STATUS "**mal COMPLETED if(WIN32)") #maladded
+message(STATUS "**") #maladded
+message(STATUS "**") #maladded
+
+
 # --------------------------------------
 
+message(STATUS "**") #maladded
+message(STATUS "**") #maladded
+
 if(UNIX AND NOT APPLE)
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN if(UNIX AND NOT APPLE)") #maladded
+  message(STATUS "**") #maladded
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN set(CMAKE_C_FLAGS...") #maladded
+
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIE")
+  
+  message(STATUS "**mal checking the CMAKE_C_FLAGS is ${CMAKE_C_FLAGS}") #maladded
+  message(STATUS "**malexpected the CMAKE_C_FLAGS is: ...-fPIE") #maladdedexpected
+  message(STATUS "**") #maladded
+
+  message(STATUS "**mal PASSED set(CMAKE_C_FLAGS...") #maladded
+  message(STATUS "**") #maladded
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN set(CMAKE_CXX_FLAGS...") #maladded
+
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIE")
+
+  message(STATUS "**mal checking the CMAKE_CXX_FLAGS is ${CMAKE_CXX_FLAGS}") #maladded
+  message(STATUS "**malexpected the CMAKE_CXX_FLAGS is: ...-fPIE") #maladdedexpected
+  message(STATUS "**") #maladded
+
+  message(STATUS "**mal PASSED set(CMAKE_CXX_FLAGS...") #maladded
+  message(STATUS "**") #maladded
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN set(CMAKE_EXE_LINKER_FLAGS...") #maladded
+
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pie")
+
+  message(STATUS "**mal checking the CMAKE_EXE_LINKER_FLAGS is ${CMAKE_EXE_LINKER_FLAGSS}") #maladded
+  message(STATUS "**malexpected the CMAKE_EXE_LINKER_FLAGS is: ...-pie") #maladdedexpected
+  message(STATUS "**") #maladded
+
+  message(STATUS "**mal PASSED set(CMAKE_EXE_LINKER_FLAGS...") #maladded
+  message(STATUS "**") #maladded
+
 endif()
+
+message(STATUS "**") #maladded
+message(STATUS "**mal COMPLETED if(UNIX AND NOT APPLE)") #maladded
+message(STATUS "**") #maladded
+
 
 if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN if(CMAKE_SYSTEM_NAME..") #maladded
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal checking the CMAKE_SYSTEM_NAME is ${CMAKE_SYSTEM_NAME}") #maladded
+  message(STATUS "**malexpected the CMAKE_SYSTEM_NAME is: FreeBSD") #maladdedexpected
+  message(STATUS "**") #maladded
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal RUN set(CMAKE_EXE_LINKER_FLAGS..") #maladded
+
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L/usr/local/lib")
+
+  message(STATUS "**") #maladded
+  message(STATUS "**mal checking the CMAKE_EXE_LINKER_FLAGS is ${CMAKE_EXE_LINKER_FLAGS}") #maladded
+  message(STATUS "**malexpected the CMAKE_EXE_LINKER_FLAGS is: samting") #maladdedexpected
+  message(STATUS "**") #maladded
+
+  message(STATUS "**mal PASSED set(CMAKE_EXE_LINKER_FLAGS..") #maladded
+  message(STATUS "**") #maladded
+
+
+  message(STATUS "**mal PASSED if(CMAKE_SYSTEM_NAME..") #maladded
+  message(STATUS "**") #maladded
+
 endif()
 
+message(STATUS "**mal COMPLETED if(CMAKE_SYSTEM_NAME..") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN add_library(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+
 add_library(nextcloudCore STATIC ${final_src})
+
+message(STATUS "**mal PASSED add_library(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN target_link_libraries(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
 
 target_link_libraries(nextcloudCore
   PUBLIC
@@ -547,15 +740,38 @@ target_link_libraries(nextcloudCore
 
 add_subdirectory(socketapi)
 
+message(STATUS "**mal PASSED target_link_libraries(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN if(Qt5WebEngine_FOUND...") #maladded
+message(STATUS "**") #maladded
+
 if(Qt5WebEngine_FOUND AND Qt5WebEngineWidgets_FOUND)
   target_link_libraries(nextcloudCore PUBLIC Qt5::WebEngineWidgets)
 endif()
 
+message(STATUS "**mal PASSED if(Qt5WebEngine_FOUND...") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN set_target_properties(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+
 set_target_properties(nextcloudCore
   PROPERTIES
   AUTOUIC ON
+  AUTORCC ON
   AUTOMOC ON
 )
+
+message(STATUS "**mal PASSED set_target_properties(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN target_include_directories(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
 
 target_include_directories(nextcloudCore
   PUBLIC
@@ -568,30 +784,182 @@ target_include_directories(nextcloudCore
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+message(STATUS "**mal PASSED target_include_directories(nextcloudCore...") #maladded
+message(STATUS "**") #maladded
+message(STATUS "**") #maladded
+
+
 if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
+    message(STATUS "**") #maladded
+    message(STATUS "**mal RUN if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+    message(STATUS "**") #maladded
+
     if(NOT WIN32)
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+        message(STATUS "**") #maladded
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN file(GLOB _icons...") #maladded
+        message(STATUS "**") #maladded
+
         file(GLOB _icons "${theme_dir}/colored/*-${APPLICATION_ICON_NAME}-icon.png")
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the _icons is ${_icons}") #maladded
+        message(STATUS "**malexpected the _icons is: C:/Nextcloud/client-building/desktop/theme/colored/Nextcloud-icon.png") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED file(GLOB _icons...") #maladded
+        message(STATUS "**") #maladded
+
+        
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN foreach(_file ${_icons...") #maladded
+        message(STATUS "**") #maladded
+
         foreach(_file ${_icons})
             string(REPLACE "${theme_dir}/colored/" "" _res ${_file})
             string(REPLACE "-${APPLICATION_ICON_NAME}-icon.png" "" _res ${_res})
             install(FILES ${_file} RENAME ${APPLICATION_ICON_NAME}.png DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/${_res}x${_res}/apps)
         endforeach(_file)
+
+        message(STATUS "Something happen in this for loop..")
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the _icons is ${_icons}") #maladded
+        message(STATUS "**malexpected the _icons is: C:/Nextcloud/client-building/desktop/theme/colored/Nextcloud-icon.png") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED foreach(_file ${_icons...") #maladded
+        message(STATUS "**") #maladded
+
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN install(FILES ${client_I18N...") #maladded
+        message(STATUS "**") #maladded
+
         install(FILES ${client_I18N} DESTINATION ${CMAKE_INSTALL_DATADIR}/${APPLICATION_EXECUTABLE}/i18n)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the FILES is ${FILES}") #maladded
+        message(STATUS "**malexpected the FILES is: samting") #maladdedexpected
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the DESTINATION is ${DESTINATION}") #maladded
+        message(STATUS "**malexpected the DESTINATION is: samting which not yet have..") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED install(FILES ${client_I18N...") #maladded
+        message(STATUS "**") #maladded
+
     else()
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN else foreach(_file _icons...") #maladded
+        message(STATUS "**") #maladded
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN file(GLOB_RECURSE...") #maladded
+
         file(GLOB_RECURSE VISUAL_ELEMENTS "${theme_dir}/colored/*-${APPLICATION_ICON_NAME}-w10startmenu*")
+
+        message(STATUS "**mal PASSED file(GLOB_RECURSE...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN install(FILES...") #maladded
+
         install(FILES ${VISUAL_ELEMENTS} DESTINATION bin/visualelements)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the FILES is ${FILES}") #maladded
+        message(STATUS "**malexpected the FILES is: samting which not yet have.. bin/visualelements") #maladdedexpected
+        message(STATUS "**mal checking the DESTINATION is ${DESTINATION}") #maladded
+        message(STATUS "**malexpected the DESTINATION is: samting which not yet have.. bin/visualelements") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED install(FILES...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN install(FILES theme_dir...") #maladded
+
         install(FILES "${theme_dir}/${APPLICATION_EXECUTABLE}.VisualElementsManifest.xml" DESTINATION bin)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the FILES is ${FILES}") #maladded
+        message(STATUS "**malexpected the FILES is: samting which not yet have.. files..") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the DESTINATION is ${DESTINATION}") #maladded
+        message(STATUS "**malexpected the DESTINATION is: samting which not yet have.. bin..") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED install(FILES theme_dir...") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**") #maladded
+        message(STATUS "**mal RUN install(FILES...") #maladded
+
         install(FILES ${client_I18N} DESTINATION i18n)
+
+        message(STATUS "**") #maladded
+        message(STATUS "**mal checking the DESTINATION is ${DESTINATION}") #maladded
+        message(STATUS "**malexpected the DESTINATION is: samting which not yet have..i18n") #maladdedexpected
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED install(FILES...") #maladded
+        message(STATUS "**") #maladded
+
+        message(STATUS "**mal PASSED else foreach(_file _icons...") #maladded
+        message(STATUS "**") #maladded
+
     endif()
+
+    message(STATUS "**mal COMPLETED if(NOT WIN32)") #maladded
+    message(STATUS "**") #maladded
+    message(STATUS "**") #maladded
+
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal RUN add_executable(nextcloud WIN32...") #maladded
 
     # we may not add MACOSX_BUNDLE here, if not building one
     add_executable(nextcloud WIN32 main.cpp ${client_version} ${client_manifest} ${APP_ICON})
     set_target_properties(nextcloud PROPERTIES
       OUTPUT_NAME "${APPLICATION_EXECUTABLE}"
     )
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal checking the OUTPUT_NAME is ${OUTPUT_NAME}") #maladded
+    message(STATUS "**malexpected the OUTPUT_NAME is: Nextcloud.exe") #maladdedexpected
+    message(STATUS "**") #maladded
+
+    message(STATUS "**mal PASSED add_executable(nextcloud WIN32...") #maladded
+    message(STATUS "**") #maladded
+    message(STATUS "**") #maladded
+
+
+    message(STATUS "**mal PASSED if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+    message(STATUS "**") #maladded
+
 else()
+    message(STATUS "**") #maladded
+    message(STATUS "**mal RUN else if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+    message(STATUS "**") #maladded
+
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal RUN set(MACOSX_BUNDLE_ICON_FILE...") #maladded
+
     # set(CMAKE_INSTALL_PREFIX ".") # Examples use /Applications. hurmpf.
     set(MACOSX_BUNDLE_ICON_FILE "${APPLICATION_ICON_NAME}.icns")
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal checking the MACOSX_BUNDLE_ICON_FILE  is ${MACOSX_BUNDLE_ICON_FILE }") #maladded
+    message(STATUS "**malexpected the MACOSX_BUNDLE_ICON_FILE  is: Nextcloud.icns") #maladdedexpected
+    message(STATUS "**") #maladded
+
+    message(STATUS "**mal PASSED set(MACOSX_BUNDLE_ICON_FILE...") #maladded
+    message(STATUS "**") #maladded
+
 
     # we must add MACOSX_BUNDLE only if building a bundle
     add_executable(nextcloud WIN32 MACOSX_BUNDLE main.cpp ${APP_ICON})
@@ -603,6 +971,14 @@ else()
       set_target_properties(nextcloud PROPERTIES
         OUTPUT_NAME "${APPLICATION_EXECUTABLE}")
     endif()
+
+
+
+    message(STATUS "**") #maladded
+    message(STATUS "**mal SKIPPED WATCHING as many things go through here...") #maladded
+    message(STATUS "**") #maladded
+
+
 
     set (QM_DIR ${OWNCLOUD_OSX_BUNDLE}/Contents/Resources/Translations)
     install(FILES ${client_I18N} DESTINATION ${QM_DIR})
@@ -617,7 +993,22 @@ else()
     install(FILES ${qtbase_I18N} DESTINATION ${QM_DIR})
     file(GLOB qtkeychain_I18N ${QT_TRANSLATIONS_DIR}/qtkeychain*.qm)
     install(FILES ${qtkeychain_I18N} DESTINATION ${QM_DIR})
+
+
+    message(STATUS "**mal PASSED else if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+    message(STATUS "**") #maladded
+
+    message(STATUS "**mal EXITING else if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+    message(STATUS "**") #maladded
+
 endif()
+
+message(STATUS "**mal COMPLETED else if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)") #maladded
+message(STATUS "**") #maladded
+
+
+
+
 
 IF(BUILD_UPDATER)
     add_library(updater STATIC ${updater_SRCS})
@@ -677,6 +1068,9 @@ if(WITH_CRASHREPORTER)
     endif()
 endif()
 
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN install(TARGETS nextcloud...") #maladded
+
 install(TARGETS nextcloud
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
@@ -684,6 +1078,9 @@ install(TARGETS nextcloud
         BUNDLE  DESTINATION "."
  )
 
+ 
+message(STATUS "**mal PASSED install(TARGETS nextcloud...") #maladded
+message(STATUS "**") #maladded
 
 # FIXME: The following lines are dup in src/gui and src/cmd because it needs to be done after both are installed
 #FIXME: find a nice solution to make the second if(BUILD_OWNCLOUD_OSX_BUNDLE) unnecessary
@@ -691,6 +1088,10 @@ install(TARGETS nextcloud
 # if building a bundle or not and the install_qt4_executable needs to be called afterwards
 #
 # OSX: Run macdeployqt for src/gui and for src/cmd using the -executable option
+
+message(STATUS "**") #maladded
+message(STATUS "**mal RUN if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT...") #maladded
+
 if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT BUILD_LIBRARIES_ONLY)
     get_target_property (QT_QMAKE_EXECUTABLE Qt5::qmake IMPORTED_LOCATION)
     get_filename_component(QT_BIN_DIR "${QT_QMAKE_EXECUTABLE}" DIRECTORY)
@@ -716,6 +1117,11 @@ if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT BUILD_LIBRARIES_ONLY)
         COMMENT "Running macdeployqt..."
     )
 endif()
+
+message(STATUS "**mal PASSED if(BUILD_OWNCLOUD_OSX_BUNDLE AND NOT...") #maladded
+message(STATUS "**") #maladded
+
+message(STATUS "**RUN Last if..") #maladded
 
 if(NOT BUILD_OWNCLOUD_OSX_BUNDLE AND NOT WIN32)
     configure_file(${CMAKE_SOURCE_DIR}/mirall.desktop.in
