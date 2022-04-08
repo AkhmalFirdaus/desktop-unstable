@@ -815,7 +815,7 @@ if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
 
         
         message(STATUS "**") #maladded
-        message(STATUS "**mal RUN foreach(_file ${_icons...") #maladded
+        message(STATUS "**mal RUN foreach(_file ..{_icons...") #maladded #malchanged removed S to ...
         message(STATUS "**") #maladded
 
         foreach(_file ${_icons})
