@@ -717,7 +717,7 @@ message(STATUS "**") #maladded
 message(STATUS "**mal RUN add_library(nextcloudCore...") #maladded
 message(STATUS "**") #maladded
 
-add_library(nextcloudCore STATIC ${final_src})
+#add_library(nextcloudCore STATIC ${final_src}) #mal commented out as Linux ORI don't have this line on 08.04.2022 1520
 
 message(STATUS "**mal PASSED add_library(nextcloudCore...") #maladded
 message(STATUS "**") #maladded
