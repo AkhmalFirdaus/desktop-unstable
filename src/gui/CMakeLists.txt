@@ -815,7 +815,7 @@ if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
 
         
         message(STATUS "**") #maladded
-        message(STATUS "**mal RUN foreach(_file ..{_icons...") #maladded #malchanged removed S to ... on 20220408 1154
+        message(STATUS "**mal RUN foreach(_file ..{_icons...") #maladded #malchanged removed S to .. on 20220408 1154
         message(STATUS "**") #maladded
 
         foreach(_file ${_icons})
@@ -831,7 +831,7 @@ if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
         message(STATUS "**malexpected the _icons is: C:/Nextcloud/client-building/desktop/theme/colored/Nextcloud-icon.png") #maladdedexpected
         message(STATUS "**") #maladded
 
-        message(STATUS "**mal PASSED foreach(_file ${_icons...") #maladded
+        message(STATUS "**mal PASSED foreach(_file ..{_icons...") #maladded #malchanged removed S to .. on 20220408 1154
         message(STATUS "**") #maladded
 
 
