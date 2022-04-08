@@ -153,7 +153,8 @@
        <item>
         <widget class="QPushButton" name="createAccountButton">
          <property name="text">
-          <string>Create account with Provider</string>
+          <string>Create Xiddigspace account</string>
+          <!-- maledited from Create account with Provider to Create Xiddigspace account -->
          </property>
          <property name="autoDefault">
           <bool>true</bool>

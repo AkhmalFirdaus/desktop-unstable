@@ -243,7 +243,8 @@
                  </size>
                 </property>
                 <property name="placeholderText">
-                 <string notr="true">https://try.nextcloud.com</string>
+                 <string notr="true">https://try.xiddigspace.com</string>
+                 <!-- maledited from https://try.nextcloud.com to https://try.xiddigspace.com -->
                 </property>
                </widget>
               </item>

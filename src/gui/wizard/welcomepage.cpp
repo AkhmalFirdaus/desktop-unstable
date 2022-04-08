@@ -97,23 +97,24 @@ void WelcomePage::setupCreateAccountButton()
 {
 #ifdef WITH_WEBENGINE
     connect(_ui->createAccountButton, &QPushButton::clicked, this, [this](bool /*checked*/) {
-        _ocWizard->setRegistration(true);
+        _ocWizard->setRegistration(true); //maledited set from true to false to true
         _nextPage = WizardCommon::Page_WebView;
         _ocWizard->next();
     });
 #else // WITH_WEBENGINE
     connect(_ui->createAccountButton, &QPushButton::clicked, this, [this](bool /*checked*/) {
         _ocWizard->setRegistration(true);
-        Utility::openBrowser(QStringLiteral("https://nextcloud.com/register"));
+        Utility::openBrowser(QStringLiteral("https://xiddigspace.com")); //maledited from https://nextcloud.com/register to xiddigspace.com
     });
 #endif // WITH_WEBENGINE
 }
 
 void WelcomePage::setupHostYourOwnServerLabel()
 {
-    _ui->hostYourOwnServerLabel->setText(tr("Host your own server"));
+    _ui->hostYourOwnServerLabel->setText(tr("Visit our website: xiddigspace.com")); //maledited from Host your own server to Visit our website: xiddigspace.com
     _ui->hostYourOwnServerLabel->setAlignment(Qt::AlignCenter);
-    _ui->hostYourOwnServerLabel->setUrl(QUrl("https://docs.nextcloud.com/server/latest/admin_manual/installation/#installation"));
+    _ui->hostYourOwnServerLabel->setUrl(QUrl("https://xiddigspace.com")); //maledited
+    // _ui->hostYourOwnServerLabel->setUrl(QUrl("https://docs.nextcloud.com/server/latest/admin_manual/installation/#installation"));
 }
 
 int WelcomePage::nextId() const

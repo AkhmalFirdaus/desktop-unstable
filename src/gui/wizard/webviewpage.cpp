@@ -44,7 +44,8 @@ void WebViewPage::initializePage() {
 
     QString url;
     if (_ocWizard->registration()) {
-        url = "https://nextcloud.com/register";
+        url = "https://xiddigspace.com"; // maledited for Create Xiddigspace account link
+        //url = "https://nextcloud.com/register";
     } else {
         url = _ocWizard->ocUrl();
         if (!url.endsWith('/')) {
