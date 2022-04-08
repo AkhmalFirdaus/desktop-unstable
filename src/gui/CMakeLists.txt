@@ -836,7 +836,7 @@ if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
 
 
         message(STATUS "**") #maladded
-        message(STATUS "**mal RUN install(FILES ${client_I18N...") #maladded
+        message(STATUS "**mal RUN install(FILES ..{client_I18N...") #maladded #malchanged removed S to ... on 20220408 1215
         message(STATUS "**") #maladded
 
         install(FILES ${client_I18N} DESTINATION ${CMAKE_INSTALL_DATADIR}/${APPLICATION_EXECUTABLE}/i18n)
@@ -849,7 +849,7 @@ if(NOT BUILD_OWNCLOUD_OSX_BUNDLE)
         message(STATUS "**malexpected the DESTINATION is: samting which not yet have..") #maladdedexpected
         message(STATUS "**") #maladded
 
-        message(STATUS "**mal PASSED install(FILES ${client_I18N...") #maladded
+        message(STATUS "**mal PASSED install(FILES ..{client_I18N...") #maladded #malchanged removed S to ... on 20220408 1215
         message(STATUS "**") #maladded
 
     else()
