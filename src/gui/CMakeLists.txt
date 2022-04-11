@@ -472,7 +472,7 @@ if(WIN32)
         message(STATUS "**mal checking the APP_ICON_WIN_FOLDER before set is ${APP_ICON_WIN_FOLDER}") #maladded
         message(STATUS "**malexpected the APP_ICON_WIN_FOLDER before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
 
-        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially #mal uncommented back out for linux 20220408 1500
+        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially #mal uncommented back out for linux 20220408 1500
         
         #set(APP_ICON_WIN_FOLDER "C:/Nextcloud/client-building/desktop/theme/colored/icons") #mal commented out for linux 20220408 1500
 
@@ -870,7 +870,7 @@ message(STATUS "**") #maladded
 set_target_properties(nextcloudCore
   PROPERTIES
   AUTOUIC ON
-  #AUTORCC ON #mal
+  #AUTORCC ON #mal commented on 09.04.2022 as this don't have in ORI
   AUTOMOC ON
 )
 
