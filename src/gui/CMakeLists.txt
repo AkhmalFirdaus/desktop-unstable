@@ -63,109 +63,208 @@ else()
 endif()
 
 set(client_SRCS
+    accountmanager.h
     accountmanager.cpp
+    accountsettings.h
     accountsettings.cpp
+    application.h
     application.cpp
+    invalidfilenamedialog.h
     invalidfilenamedialog.cpp
+    conflictdialog.h
     conflictdialog.cpp
+    conflictsolver.h
     conflictsolver.cpp
+    connectionvalidator.h
     connectionvalidator.cpp
+    folder.h
     folder.cpp
+    foldercreationdialog.h
     foldercreationdialog.cpp
+    folderman.h
     folderman.cpp
+    folderstatusmodel.h
     folderstatusmodel.cpp
+    folderstatusdelegate.h
     folderstatusdelegate.cpp
+    folderstatusview.h
     folderstatusview.cpp
+    folderwatcher.h
     folderwatcher.cpp
+    folderwizard.h
     folderwizard.cpp
+    generalsettings.h
     generalsettings.cpp
+    legalnotice.h
     legalnotice.cpp
+
+    ignorelisteditor.h
     ignorelisteditor.cpp
+    ignorelisttablewidget.h
     ignorelisttablewidget.cpp
+    lockwatcher.h
     lockwatcher.cpp
+    logbrowser.h
     logbrowser.cpp
+    navigationpanehelper.h
     navigationpanehelper.cpp
+    networksettings.h
     networksettings.cpp
+    ocsnavigationappsjob.h
     ocsnavigationappsjob.cpp
+    ocsjob.h
     ocsjob.cpp
+    ocssharejob.h
     ocssharejob.cpp
+    ocsshareejob.h
     ocsshareejob.cpp
+    openfilemanager.h
     openfilemanager.cpp
+    owncloudgui.h
     owncloudgui.cpp
+    owncloudsetupwizard.h
     owncloudsetupwizard.cpp
+    passwordinputdialog.h
     passwordinputdialog.cpp
+    selectivesyncdialog.h
     selectivesyncdialog.cpp
+    settingsdialog.h
     settingsdialog.cpp
+    sharedialog.h
     sharedialog.cpp
+    sharelinkwidget.h
     sharelinkwidget.cpp
+    sharemanager.h
     sharemanager.cpp
+    shareusergroupwidget.h
     shareusergroupwidget.cpp
+    profilepagewidget.h
     profilepagewidget.cpp
+    sharee.h
     sharee.cpp
+    sslbutton.h
     sslbutton.cpp
+    sslerrordialog.h
     sslerrordialog.cpp
+    syncrunfilelog.h
     syncrunfilelog.cpp
+    systray.h
     systray.cpp
+    thumbnailjob.h
     thumbnailjob.cpp
+    userinfo.h
     userinfo.cpp
+    accountstate.h
     accountstate.cpp
+    addcertificatedialog.h
     addcertificatedialog.cpp
+    authenticationdialog.h
     authenticationdialog.cpp
+    proxyauthhandler.h
     proxyauthhandler.cpp
+    proxyauthdialog.h
     proxyauthdialog.cpp
+    tooltipupdater.h
     tooltipupdater.cpp
+    notificationconfirmjob.h
     notificationconfirmjob.cpp
+    guiutility.h
     guiutility.cpp
+    elidedlabel.h
     elidedlabel.cpp
+    headerbanner.h
     headerbanner.cpp
+    iconutils.h
     iconutils.cpp
+    remotewipe.h
     remotewipe.cpp
+    userstatusselectormodel.h
     userstatusselectormodel.cpp
+    emojimodel.h
     emojimodel.cpp
+    fileactivitylistmodel.h
     fileactivitylistmodel.cpp
+    tray/svgimageprovider.h
     tray/svgimageprovider.cpp
+    tray/syncstatussummary.h
     tray/syncstatussummary.cpp
+    tray/activitydata.h
     tray/activitydata.cpp
+    tray/activitylistmodel.h
     tray/activitylistmodel.cpp
+    tray/unifiedsearchresult.h
+    tray/asyncimageresponse.cpp
     tray/unifiedsearchresult.cpp
-    tray/unifiedsearchresultimageprovider.cpp
+    tray/unifiedsearchresultslistmodel.h
+    tray/trayimageprovider.cpp
     tray/unifiedsearchresultslistmodel.cpp
+    tray/usermodel.h
     tray/usermodel.cpp
+    tray/notificationhandler.h
     tray/notificationhandler.cpp
+    tray/notificationcache.h
     tray/notificationcache.cpp
+    creds/credentialsfactory.h
+    tray/talkreply.cpp
     creds/credentialsfactory.cpp
+    creds/httpcredentialsgui.h
     creds/httpcredentialsgui.cpp
+    creds/oauth.h
     creds/oauth.cpp
+    creds/flow2auth.h
     creds/flow2auth.cpp
+    creds/webflowcredentials.h
     creds/webflowcredentials.cpp
+    creds/webflowcredentialsdialog.h
     creds/webflowcredentialsdialog.cpp
+    wizard/postfixlineedit.h
     wizard/postfixlineedit.cpp
+    wizard/abstractcredswizardpage.h
     wizard/abstractcredswizardpage.cpp
+    wizard/owncloudadvancedsetuppage.h
     wizard/owncloudadvancedsetuppage.cpp
+    wizard/owncloudconnectionmethoddialog.h
     wizard/owncloudconnectionmethoddialog.cpp
+    wizard/owncloudhttpcredspage.h
     wizard/owncloudhttpcredspage.cpp
+    wizard/owncloudoauthcredspage.h
     wizard/owncloudoauthcredspage.cpp
+    wizard/flow2authcredspage.h
     wizard/flow2authcredspage.cpp
+    wizard/flow2authwidget.h
     wizard/flow2authwidget.cpp
+    wizard/owncloudsetuppage.h
     wizard/owncloudsetuppage.cpp
+    wizard/owncloudwizardcommon.h
     wizard/owncloudwizardcommon.cpp
+    wizard/owncloudwizard.h
     wizard/owncloudwizard.cpp
+    wizard/slideshow.h
     wizard/slideshow.cpp
+    wizard/welcomepage.h
     wizard/welcomepage.cpp
+    wizard/linklabel.h
     wizard/linklabel.cpp
     )
+#mal added above SRCS as in ORI have on 08.04.2022 1604
+
 
 if (Qt5WebEngine_FOUND AND Qt5WebEngineWidgets_FOUND)
   list(APPEND client_SRCS
+    wizard/webviewpage.h #mal added 08.04.2022 1630 as ORI also have
     wizard/webviewpage.cpp
+    wizard/webviewpage.h #mal added 08.04.2022 1630 as ORI also have
     wizard/webview.cpp
   )
 endif()
 
 IF(BUILD_UPDATER)
     set(updater_SRCS
+        updater/ocupdater.h  #mal added 08.04.2022 1630 as ORI also have
         updater/ocupdater.cpp
+        updater/updateinfo.h  #mal added 08.04.2022 1630 as ORI also have
         updater/updateinfo.cpp
+        updater/updater.h  #mal added 08.04.2022 1630 as ORI also have
         updater/updater.cpp
     )
 endif()
@@ -199,12 +298,19 @@ list(APPEND client_SRCS folderwatcher_mac.cpp)
 ENDIF()
 
 set(3rdparty_SRC
+    ../3rdparty/QProgressIndicator/QProgressIndicator.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/QProgressIndicator/QProgressIndicator.cpp
+    ../3rdparty/qtlockedfile/qtlockedfile.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/qtlockedfile/qtlockedfile.cpp
+    ../3rdparty/qtlockedfile/qtlockedfile.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/qtsingleapplication/qtlocalpeer.cpp
+    ../3rdparty/qtsingleapplication/qtsingleapplication.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/qtsingleapplication/qtsingleapplication.cpp
+    ../3rdparty/qtsingleapplication/qtsingleapplication.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/qtsingleapplication/qtsinglecoreapplication.cpp
+    ../3rdparty/qtsingleapplication/qtsingleapplication.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/kmessagewidget/kmessagewidget.cpp
+    ../3rdparty/kirigami/wheelhandler.h #mal added 08.04.2022 1630 as ORI also have
     ../3rdparty/kirigami/wheelhandler.cpp
    )
 
@@ -264,7 +370,7 @@ endif()
 find_program(SVG_CONVERTER
   NAMES inkscape inkscape.exe rsvg-convert
   REQUIRED
-  # HINTS "C:\\Program Files\\Inkscape\\bin" "/usr/bin" ENV SVG_CONVERTER_DIR)
+  #HINTS "C:\\Program Files\\Inkscape\\bin" "/usr/bin" ENV SVG_CONVERTER_DIR) #mal added 08.04.2022 1630 as in ORI
   HINTS "C:\\Program Files\\Inkscape" "/usr/bin" ENV SVG_CONVERTER_DIR)
 # REQUIRED keyword is only supported on CMake 3.18 and above
 if (NOT SVG_CONVERTER)
@@ -366,7 +472,7 @@ if(WIN32)
         message(STATUS "**mal checking the APP_ICON_WIN_FOLDER before set is ${APP_ICON_WIN_FOLDER}") #maladded
         message(STATUS "**malexpected the APP_ICON_WIN_FOLDER before set is: C:/Nextcloud/client-building/desktop/theme/colored/icons") #maladdedexpected
 
-        ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially #mal uncommented back out for linux 20220408 1500
+        #ecm_add_app_icon(APP_ICON_WIN_FOLDER ICONS ${OWNCLOUD_ICONS_WIN_FOLDER} SIDEBAR_ICONS "${OWNCLOUD_SIDEBAR_ICONS}" OUTFILE_BASENAME "${APP_ICON_WIN_FOLDER_ICO_NAME}" ICON_INDEX 2) #initially #mal uncommented back out for linux 20220408 1500
         
         #set(APP_ICON_WIN_FOLDER "C:/Nextcloud/client-building/desktop/theme/colored/icons") #mal commented out for linux 20220408 1500
 
@@ -717,7 +823,8 @@ message(STATUS "**") #maladded
 message(STATUS "**mal RUN add_library(nextcloudCore...") #maladded
 message(STATUS "**") #maladded
 
-#add_library(nextcloudCore STATIC ${final_src}) #mal commented out as Linux ORI don't have this line on 08.04.2022 1520
+add_library(nextcloudCore STATIC ${final_src}) #mal commented out as Linux ORI don't have this line on 08.04.2022 1520
+#mal uncommented back as this line have in ORI
 
 message(STATUS "**mal PASSED add_library(nextcloudCore...") #maladded
 message(STATUS "**") #maladded
@@ -763,7 +870,7 @@ message(STATUS "**") #maladded
 set_target_properties(nextcloudCore
   PROPERTIES
   AUTOUIC ON
-  AUTORCC ON
+  #AUTORCC ON #mal
   AUTOMOC ON
 )
 
